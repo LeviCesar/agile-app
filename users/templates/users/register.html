@@ -1,0 +1,49 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="columns is-centered">
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+            <h2 class="title is-3 has-text-centered">Cadastro de Usuário</h2>
+            <form method="POST" class="box">
+                {% csrf_token %}
+                
+                <div class="field">
+                    {{ form.username.label_tag }}
+                    <div class="control">
+                        {{ form.username }}
+                    </div>
+                </div>
+                
+                <div class="field">
+                    {{ form.email.label_tag }}
+                    <div class="control">
+                        {{ form.email }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    {{ form.password1.label_tag }}
+                    <div class="control">
+                        {{ form.password1 }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    {{ form.password2.label_tag }}
+                    <div class="control">
+                        {{ form.password2 }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-primary is-fullwidth">Cadastrar</button>  <!-- Bulma button -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+s
